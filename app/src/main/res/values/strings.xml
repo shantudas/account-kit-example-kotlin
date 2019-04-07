@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AccountKitExampleKtx</string>
+    <string name="FACEBOOK_APP_ID">311520859537568</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">780fe41995f9ddd20e2d7d37aa586a6b</string>
+</resources>
