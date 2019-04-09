@@ -8,6 +8,7 @@ import android.util.Base64
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.facebook.accountkit.AccountKit
 import com.facebook.accountkit.AccountKitError
 import com.facebook.accountkit.AccountKitLoginResult
 import com.facebook.accountkit.ui.AccountKitActivity
@@ -28,6 +29,11 @@ class LogInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        if (AccountKit.getCurrentAccessToken()!=null){
+            goToMyLoggedInActivity()
+        }
 
         printKeyHash()
 
@@ -88,6 +94,8 @@ class LogInActivity : AppCompatActivity() {
 
     private fun goToMyLoggedInActivity() {
         Log.d(TAG, "goToMyLoggedInActivity: called")
+        val intent=Intent(this@LogInActivity,HomeActivity::class.java)
+        startActivity(intent)
     }
 
     private fun showErrorActivity(error: AccountKitError) {
